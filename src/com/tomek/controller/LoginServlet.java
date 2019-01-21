@@ -17,8 +17,7 @@ public class LoginServlet extends HttpServlet {
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String query = "SELECT * FROM users WHERE username =? AND password =?;";
-        String all = "all";
+        String query = "SELECT * FROM user WHERE user_name = ? AND password = ?;";
 
         try (
                 Connection con = ConnectionProvider.getConnection();
@@ -27,11 +26,11 @@ public class LoginServlet extends HttpServlet {
             stmt.setString(2, password);
             ResultSet resultSet = stmt.executeQuery();
             if (resultSet.next()) {
-                request.getSession(true).setAttribute("priviliges", all);
+                request.getSession(true).setAttribute("username", username);
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             } else {
 
-                response.sendRedirect("login.jsp");
+                response.sendRedirect("error.jsp");
             }
 
         } catch (Exception e) {

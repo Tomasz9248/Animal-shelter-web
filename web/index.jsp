@@ -13,8 +13,8 @@
 <body>
 <header><img src="/res/dogBanner.jpg" width="100%"  alt=""></header>
 <br><form action="addAnimal.jsp" method="post"><button>Dodaj zwierzę</button></form>
-<form action="/ListServlet" method="post"><button>Pokaż listę zwierząt</button></form>
-<form action="login.jsp" method="post"><button>Zaloguj się</button></form>
+<form action="ListServlet" method="post"><button>Pokaż listę zwierząt</button></form>
+<form action="justLogin.jsp" method="post"><button>Zaloguj się</button></form>
 
 </body>
 </html>

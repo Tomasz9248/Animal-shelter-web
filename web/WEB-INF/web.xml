@@ -36,17 +36,28 @@
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
 
-     Konfiguracja filtrów
-    <filter>
-        <filter-name>AddAnimalFilter</filter-name>
-        <filter-class>com.tomek.filters.AddAnimalFilter</filter-class>
-    </filter>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Opcjonalna nazwa</web-resource-name>
+            <url-pattern>/addAnimal.jsp</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
 
-     Mapowanie filtrów
-    <filter-mapping>
-        <filter-name>AddAnimalFilter</filter-name>
-        <url-pattern>/addAnimal.jsp</url-pattern>
-    </filter-mapping>
+        <auth-constraint>
+            <role-name>admin_role</role-name>
+        </auth-constraint>
+    </security-constraint>
 
+    <security-role>
+        <role-name>admin_role</role-name>
+    </security-role>
 
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/error.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
 </web-app>

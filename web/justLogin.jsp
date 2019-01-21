@@ -8,13 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Schronisko Java - zaloguj się do panelu zarządzania</title>
+    <title>Schronisko Java - zaloguj się</title>
 </head>
 <body>
 <h2>Podaj swoje dane logowania:</h2><br>
-<form action="j_security_check" method="post">
-   Twoja unikatowa nazwa użytkownika:<br> <input type="text" placeholder="login" name="j_username"><br>
-   Twoje hasło:<br> <input type="password" placeholder="password" name="j_password"><br><br>
+<form action="LoginServlet" method="post">
+    Twoja unikatowa nazwa użytkownika:<br> <input type="text" placeholder="login" name="username"><br>
+    Twoje hasło:<br> <input type="password" placeholder="password" name="password"><br><br>
     <input type="submit" value="Zaloguj"/>
 </form>
 </body>
