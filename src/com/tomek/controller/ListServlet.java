@@ -18,7 +18,7 @@ import java.util.List;
 
 public class ListServlet extends HttpServlet {
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         List<Dog> animalList = getAnimals();
         request.setAttribute("animalList", animalList);

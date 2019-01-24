@@ -38,23 +38,16 @@ public class DogServlet extends HttpServlet {
                 dog = new Dog(name, race, age, isFetching, isPurebred);
                 dao.create(dog);
                 operation = "create";
-            } else if ("read".equals(option)) {
-                dog = dao.read(name);
-                operation = "read";
+
             } else if ("update".equals(option)) {
                 dog = new Dog(name, race, age, isFetching, isPurebred);
                 dao.update(dog);
                 operation = "update";
-            } else if ("delete".equals(option)) {
-                dog = dao.read(name);
-                dao.delete(dog);
-                operation = "deleter";
             }
 
             request.setAttribute("dog", dog);
             request.setAttribute("operation", operation);
-            request.getRequestDispatcher("dogResult.jsp").forward(request,response);
-
+            request.getRequestDispatcher("dogResult.jsp").forward(request, response);
         } catch (DbOperationException e) {
             e.printStackTrace();
         }

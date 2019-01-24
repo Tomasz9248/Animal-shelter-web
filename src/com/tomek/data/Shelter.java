@@ -61,20 +61,13 @@ public class Shelter implements Serializable {
     }
 
     protected void removeAnimal (String name) {
-        for (Dog pet : animalList) {
-            if (pet.getName().equals(name)) {
-                animalList.remove(pet);
-                System.out.println(pet.getName() + " znalazł dom! :-)");
-            } else {
-                System.out.println("Nie ma zwierzęcia w bazie. Spróbuj ponownie.");
-            }
-        }
+        animalList.removeIf(x -> x.getName().equals(name));
+        System.out.println(name + "found new home!");
     }
 
     protected void showStatus() {
-        for (Dog animal : animalList) {
-            System.out.println(animal.toString());
-        }
+       animalList.stream()
+               .forEach(System.out::println);
         printCapacityCommunicate();
     }
 

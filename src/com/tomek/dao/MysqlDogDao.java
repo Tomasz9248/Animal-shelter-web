@@ -35,7 +35,8 @@ public class MysqlDogDao implements DogDao {
         Dog resultDog = null;
         SqlParameterSource namedParameter = new MapSqlParameterSource("name", name);
         List<Dog> dogList = template.query(READ, namedParameter, BeanPropertyRowMapper.newInstance(Dog.class));
-        if (dogList.get(0) != null) {
+
+       if (dogList.size() > 0) {
             resultDog = dogList.get(0);
         }
         return resultDog;
