@@ -1,0 +1,14 @@
+
+<div class="navbar">
+    <a href="index.jsp">Strona główna</a>
+    <a href="ListServlet">Lista zwierząt</a>
+    <div class="dropdown">
+        <button class="dropbtn">Zarządzaj
+        </button>
+        <div class="dropdown-content">
+            <a href="addAnimal.jsp">Dodaj/modyfikuj zwierzę</a>
+            <a href="readAnimal.jsp">Wyszukaj zwierzę</a>
+            <a href="deleteAnimal.jsp">Usuń zwierzę</a>
+        </div>
+    </div>
+</div>

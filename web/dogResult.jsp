@@ -1,7 +1,13 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="com.tomek.data.Dog" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<% Dog dog = (Dog)request.getAttribute("dog"); %>
+
+<jsp:useBean id="dog" class="com.tomek.data.Dog" scope="request">
+    <jsp:setProperty name="dog" property="*"/>
+</jsp:useBean>
+
+<link rel="stylesheet" type="text/css" href="style.css">
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,13 +15,13 @@
     <title>Schronisko Java - wynik zapytania</title>
 </head>
 <body>
-<h1>Wynik zapytania <%= request.getAttribute("option") %></h1>
-<p>W wyniku Twojego zapytania otrzymano następujacy wynik:</p>
-<p>Imię: <%= dog.getName() %><br>
-    Rasa: <%= dog.getAge()) %><br>
-    Wiek: <%= dog.getRace() %><br>
-    Aportuje:<%= dog.getIsFetching() %><br>
-    Rodowód: <%= dog.getIsPurebred() %> </p>
+<jsp:include page="/WEB-INF/fragments/navbar.jspx"/>
+W wyniku Twojego zapytania <c:out value="${paramValues.operation[0]}"/> otrzymano następujący wynik:
+<p>Imię: <jsp:getProperty name="dog" property="name"/><br>
+    Rasa: <jsp:getProperty name="dog" property="race"/><br>
+    Wiek: <jsp:getProperty name="dog" property="age"/><br>
+    Aportuje: <jsp:getProperty name="dog" property="isFetching"/><br>
+    Rodowód: <jsp:getProperty name="dog" property="isPurebred"/></p>
 <a href="index.jsp">Powrót do strony głównej</a> ||
 <a href="addAnimal.jsp">Dodaj/usuń kolejne zwierzę</a>
 </body>
