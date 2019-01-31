@@ -4,11 +4,11 @@ import com.tomek.data.User;
 
 public interface UserDao {
 
-    public void create();
+    public void create(User user);
 
-    public User read();
+    public User read(String user_name);
 
-    public void update();
+    public void update(User user);
 
-    public void delete();
+    public void delete(User user);
 }

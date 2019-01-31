@@ -25,6 +25,10 @@
         <servlet-name>SearchDeleteServlet</servlet-name>
         <servlet-class>com.tomek.controller.SearchDeleteServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.tomek.controller.RegisterServlet</servlet-class>
+    </servlet>
 
     <!-- Mapowanie serwletów -->
     <servlet-mapping>
@@ -43,12 +47,16 @@
         <servlet-name>SearchDeleteServlet</servlet-name>
         <url-pattern>/SearchDeleteServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
 
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>Opcjonalna nazwa</web-resource-name>
             <url-pattern>/addAnimal.jsp</url-pattern>
-            <url-pattern>/deleteAnimal.jsp</url-pattern>
+            <url-pattern>/SearchDeleteServlet</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
         </web-resource-collection>
@@ -61,6 +69,7 @@
     <security-role>
         <role-name>admin_role</role-name>
     </security-role>
+
 
     <login-config>
         <auth-method>FORM</auth-method>

@@ -33,20 +33,18 @@ public class DogServlet extends HttpServlet {
 
             Dog dog = null;
             String operation = null;
-
             if ("add".equals(option)) {
                 dog = new Dog(name, race, age, isFetching, isPurebred);
                 dao.create(dog);
-                operation = "create";
+
 
             } else if ("update".equals(option)) {
                 dog = new Dog(name, race, age, isFetching, isPurebred);
                 dao.update(dog);
-                operation = "update";
+
             }
 
             request.setAttribute("dog", dog);
-            request.setAttribute("operation", operation);
             request.getRequestDispatcher("dogResult.jsp").forward(request, response);
         } catch (DbOperationException e) {
             e.printStackTrace();

@@ -1,0 +1,41 @@
+package com.tomek.controller;
+
+import com.tomek.dao.DaoFactory;
+import com.tomek.dao.MysqlDaoFactory;
+import com.tomek.dao.UserDao;
+import com.tomek.data.JavaEmail;
+import com.tomek.data.User;
+import com.tomek.util.DbOperationException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+public class RegisterServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        request.setCharacterEncoding("UTF-8");
+        String user_name = request.getParameter("username");
+        String password = request.getParameter("password");
+        String email_address = request.getParameter("emailAddress");
+
+
+        try {
+            DaoFactory factory = DaoFactory.getDaoFactory(DaoFactory.MYSQL_FACTORY);
+            UserDao dao = factory.getUserDao();
+
+            User user = new User(user_name, password, email_address);
+            dao.create(user);
+
+            request.setAttribute("username", user_name);
+
+            request.getRequestDispatcher("welcome.jsp").forward(request, response);
+
+        } catch (DbOperationException e) {
+            e.printStackTrace();
+            response.sendRedirect("error.jsp");
+        }
+    }
+}

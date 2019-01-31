@@ -8,14 +8,14 @@ public abstract class DaoFactory {
 
     public abstract UserDao getUserDao();
 
-    private static DaoFactory instane;
+    private static DaoFactory instance;
 
     public static DaoFactory getDaoFactory(int typeFactory) {
-        if (instane == null) {
+        if (instance == null) {
             if (typeFactory == MYSQL_FACTORY) {
-                instane = new MysqlDaoFactory();
+                instance = new MysqlDaoFactory();
             }
         }
-        return instane;
+        return instance;
     }
 }

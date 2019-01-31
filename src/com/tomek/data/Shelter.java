@@ -53,7 +53,7 @@ public class Shelter implements Serializable {
             animalList.add( animal);
             currentAnimalsNumber++;
             if (SHELTER_CAPACITY - currentAnimalsNumber < 5) {
-                JavaEmail.runMail();
+
             }
         } else {
             System.out.println("We're sorry. The shelter is full and we unfortunately can't receive more animals.");

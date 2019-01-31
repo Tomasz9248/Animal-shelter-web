@@ -1,4 +1,3 @@
-
 <div class="navbar">
     <a href="index.jsp">Strona główna</a>
     <a href="ListServlet">Lista zwierząt</a>
@@ -11,4 +10,5 @@
             <a href="deleteAnimal.jsp">Usuń zwierzę</a>
         </div>
     </div>
+    <a href="register.jsp" style="float: right">Zarejestuj się</a>
 </div>
