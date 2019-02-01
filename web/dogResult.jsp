@@ -16,7 +16,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/fragments/navbar.jspx"/>
-W wyniku Twojego zapytania <c:out value="${paramValues.operation[0]}"/> otrzymano następujący wynik:
+W wyniku Twojego zapytania <c:out value="${operation}"/> otrzymano następujący wynik:
 <p>Imię: <jsp:getProperty name="dog" property="name"/><br>
     Rasa: <jsp:getProperty name="dog" property="race"/><br>
     Wiek: <jsp:getProperty name="dog" property="age"/><br>
@@ -24,5 +24,6 @@ W wyniku Twojego zapytania <c:out value="${paramValues.operation[0]}"/> otrzyman
     Rodowód: <jsp:getProperty name="dog" property="isPurebred"/></p>
 <a href="index.jsp">Powrót do strony głównej</a> ||
 <a href="addAnimal.jsp">Dodaj/usuń kolejne zwierzę</a>
+<%@ include file="WEB-INF/fragments/footer.jspx"%>
 </body>
 </html>

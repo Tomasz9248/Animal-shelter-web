@@ -24,6 +24,7 @@
     Dodaj: <input type="radio" name="option" value="add"><br>
     Modyfikuj: <input type="radio" name="option" value="update"><br>
     <input type="submit" name ="option"/>
+    <%@ include file="WEB-INF/fragments/footer.jspx"%>
 </form>
 </body>
 </html>

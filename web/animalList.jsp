@@ -13,6 +13,7 @@
 <body>
 <jsp:include page="/WEB-INF/fragments/navbar.jspx"/>
 <h2>Lista zwierząt przebywających w schronisku:</h2>
+
 <table class="zebra-table">
     <tr>
         <th>Imię</th>
@@ -36,6 +37,6 @@
     </tr>
     </c:forEach>
 </table>
-
+<%@ include file="WEB-INF/fragments/footer.jspx"%>
 </body>
 </html>

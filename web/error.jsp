@@ -17,4 +17,5 @@
 <a href="addAnimal.jsp">Spróbuj ponownie</a><br>
 <a href="index.jsp">Wróc do strony głównej</a>
 </body>
+<%@ include file="WEB-INF/fragments/footer.jspx"%>
 </html>

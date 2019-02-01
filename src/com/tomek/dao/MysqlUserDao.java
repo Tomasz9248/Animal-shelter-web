@@ -2,9 +2,13 @@ package com.tomek.dao;
 
 import com.tomek.data.User;
 import com.tomek.util.ConnectionProvider;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+
+import java.util.List;
 
 public class MysqlUserDao implements UserDao {
 
@@ -21,22 +25,34 @@ public class MysqlUserDao implements UserDao {
 
     @Override
     public void create(User user) {
-        BeanPropertySqlParameterSource source = new BeanPropertySqlParameterSource(user);
-        template.update(CREATE, source);
+        BeanPropertySqlParameterSource beanParamSource = new BeanPropertySqlParameterSource(user);
+        template.update(CREATE, beanParamSource);
     }
 
     @Override
     public User read(String user_name) {
-        return null;
+        User resultUser = null;
+        SqlParameterSource namedParameter = new MapSqlParameterSource("user_name",user_name);
+
+        List<User> userList = template.query(READ, namedParameter, BeanPropertyRowMapper.newInstance(User.class));
+
+        if (userList.size() > 0) {
+            resultUser = userList.get(0);
+        }
+        return resultUser;
     }
 
     @Override
     public void update(User user) {
+        BeanPropertySqlParameterSource beanParamSource = new BeanPropertySqlParameterSource(user);
+        template.update(UPDATE, beanParamSource);
 
     }
 
     @Override
     public void delete(User user) {
+        SqlParameterSource namedParameter = new MapSqlParameterSource("user_name", user.getUser_name());
+        template.update(DELETE, namedParameter);
 
     }
 }

@@ -4,9 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Schronisko Java - wyszukaj zwierzę</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <jsp:include page="/WEB-INF/fragments/navbar.jspx"/>
@@ -14,7 +13,9 @@
 <form action="SearchDeleteServlet" method="post">
     <input type="text" placeholder="Imię" name="name">
     <br>
-    <input type="submit" name ="option" value="Szukaj">
+    <input type="submit" name ="option" value="Szukaj"/>
 </form>
+
+<%@ include file="WEB-INF/fragments/footer.jspx"%>
 </body>
 </html>

@@ -1,19 +1,22 @@
 <%--
   Created by IntelliJ IDEA.
   User: Tomasz
-  Date: 21.01.2019
-  Time: 19:26
+  Date: 31.01.2019
+  Time: 16:30
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link rel="stylesheet" type="text/css" href="style.css">
+
 <html>
 <head>
-    <title>Schronisko Java - brak rekordu w bazie</title>
+    <title>Schronisko Java - Witamy!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <jsp:include page="/WEB-INF/fragments/navbar.jspx"/>
-<h2>W bazie nie znaleziono psa o takim imieniu</h2>
+
+<h2>Witaj wśród zarejestrowanych członków Schroniska Java <c:out value="${username}"/>  </h2>
 <%@ include file="WEB-INF/fragments/footer.jspx"%>
 </body>
 </html>
