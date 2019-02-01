@@ -29,6 +29,10 @@
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>com.tomek.controller.RegisterServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EmailServlet</servlet-name>
+        <servlet-class>com.tomek.controller.EmailServlet</servlet-class>
+    </servlet>
 
     <!-- Mapowanie serwletów -->
     <servlet-mapping>
@@ -50,6 +54,10 @@
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EmailServlet</servlet-name>
+        <url-pattern>/EmailServlet</url-pattern>
     </servlet-mapping>
 
     <security-constraint>

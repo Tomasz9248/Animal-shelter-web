@@ -1,9 +1,7 @@
 package com.tomek.controller;
 
 import com.tomek.dao.DaoFactory;
-import com.tomek.dao.MysqlDaoFactory;
 import com.tomek.dao.UserDao;
-import com.tomek.data.JavaEmail;
 import com.tomek.data.User;
 import com.tomek.util.DbOperationException;
 
@@ -22,6 +20,7 @@ public class RegisterServlet extends HttpServlet {
         String email_address = request.getParameter("emailAddress");
 
 
+
         try {
             DaoFactory factory = DaoFactory.getDaoFactory(DaoFactory.MYSQL_FACTORY);
             UserDao dao = factory.getUserDao();
@@ -29,9 +28,9 @@ public class RegisterServlet extends HttpServlet {
             User user = new User(user_name, password, email_address);
             dao.create(user);
 
+            request.setAttribute("emailAddress", email_address);
             request.setAttribute("username", user_name);
-
-            request.getRequestDispatcher("welcome.jsp").forward(request, response);
+            request.getRequestDispatcher("/EmailServlet").forward(request, response);
 
         } catch (DbOperationException e) {
             e.printStackTrace();
