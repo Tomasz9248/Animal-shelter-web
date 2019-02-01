@@ -1,5 +1,7 @@
 package com.tomek.controller;
 
+
+import org.apache.commons.validator.EmailValidator;
 import com.tomek.dao.DaoFactory;
 import com.tomek.dao.UserDao;
 import com.tomek.data.User;
@@ -28,9 +30,15 @@ public class RegisterServlet extends HttpServlet {
             User user = new User(user_name, password, email_address);
             dao.create(user);
 
-            request.setAttribute("emailAddress", email_address);
-            request.setAttribute("username", user_name);
-            request.getRequestDispatcher("/EmailServlet").forward(request, response);
+            EmailValidator validator = EmailValidator.getInstance();
+            if (validator.isValid(email_address)) {
+                request.setAttribute("emailAddress", email_address);
+                request.setAttribute("username", user_name);
+                request.getRequestDispatcher("/EmailServlet").forward(request, response);
+            } else {
+                response.sendRedirect("register.jsp");
+            }
+
 
         } catch (DbOperationException e) {
             e.printStackTrace();
