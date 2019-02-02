@@ -22,7 +22,6 @@ public class ConnectionProvider {
                 Context initContext = new InitialContext();
                     Context envContext = (Context) initContext.lookup("java:comp/env");
                     dataSource = (DataSource) envContext.lookup("jdbc/shelter");
-
                 } catch (NamingException ne) {
                 ne.printStackTrace();
             }

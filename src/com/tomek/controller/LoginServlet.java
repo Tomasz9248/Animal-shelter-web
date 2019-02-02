@@ -17,11 +17,10 @@ public class LoginServlet extends HttpServlet {
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String query = "SELECT * FROM user WHERE user_name = ? AND password = ?;";
-
+        String readUser = "SELECT * FROM user WHERE user_name = ? AND password = ?;";
         try (
                 Connection con = ConnectionProvider.getConnection();
-                PreparedStatement stmt = con.prepareStatement(query);) {
+                PreparedStatement stmt = con.prepareStatement(readUser);) {
             stmt.setString(1, username);
             stmt.setString(2, password);
             ResultSet resultSet = stmt.executeQuery();
@@ -29,14 +28,10 @@ public class LoginServlet extends HttpServlet {
                 request.getSession(true).setAttribute("username", username);
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             } else {
-
                 response.sendRedirect("error.jsp");
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-
 }

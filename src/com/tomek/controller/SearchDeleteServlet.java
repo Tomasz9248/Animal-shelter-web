@@ -24,17 +24,15 @@ public class SearchDeleteServlet extends HttpServlet {
 
             Dog dog = null;
             String operation = null;
-
-            if ("Szukaj".equals(option)) {
+            if ((option).equals("Szukaj")) {
                 dog = dao.read(name);
                 operation = "read";
-            } else if ("Usuń".equals(option)) {
+            } else if (option.equals("Usuń")) {
                 dog = dao.read(name);
                 dao.delete(dog);
-                operation = "deleter";
+                operation = "delete";
             }
             if (dog.getName() != null) {
-
                 request.setAttribute("dog", dog);
                 request.setAttribute("operation", operation);
                 request.getRequestDispatcher("dogResult.jsp").forward(request, response);
@@ -44,7 +42,5 @@ public class SearchDeleteServlet extends HttpServlet {
         } catch (NullPointerException ne) {
                 response.sendRedirect("nullPointer.jsp");
         }
-
-
     }
 }

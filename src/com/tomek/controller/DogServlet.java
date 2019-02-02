@@ -12,7 +12,6 @@ import com.tomek.dao.DogDao;
 import com.tomek.util.DbOperationException;
 import com.tomek.data.Dog;
 
-
 public class DogServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -33,17 +32,13 @@ public class DogServlet extends HttpServlet {
 
             Dog dog = null;
             String operation = null;
-            if ("add".equals(option)) {
+            if (option.equals("add")) {
                 dog = new Dog(name, race, age, isFetching, isPurebred);
                 dao.create(dog);
-
-
-            } else if ("update".equals(option)) {
+            } else if ((option).equals("update")) {
                 dog = new Dog(name, race, age, isFetching, isPurebred);
                 dao.update(dog);
-
             }
-
             request.setAttribute("dog", dog);
             request.getRequestDispatcher("dogResult.jsp").forward(request, response);
         } catch (DbOperationException e) {

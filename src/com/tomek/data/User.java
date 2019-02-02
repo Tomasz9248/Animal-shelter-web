@@ -2,25 +2,25 @@ package com.tomek.data;
 
 public class User {
 
-    private String user_name;
+    private String userName;
     private String password;
-    private String email_address;
+    private String emailAddress;
 
     public User() {
     }
 
-    public User(String user_name, String password, String email_address) {
-        this.user_name = user_name;
+    public User(String userName, String password, String emailAddress) {
+        this.userName = userName;
         this.password = password;
-        this.email_address = email_address;
+        this.emailAddress = emailAddress;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -31,11 +31,11 @@ public class User {
         this.password = password;
     }
 
-    public String getEmail_address() {
-        return email_address;
+    public String getEmailAddress() {
+        return emailAddress;
     }
 
-    public void setEmail_address(String email_address) {
-        this.email_address = email_address;
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 }

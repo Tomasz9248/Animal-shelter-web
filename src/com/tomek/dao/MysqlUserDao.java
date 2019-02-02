@@ -12,10 +12,10 @@ import java.util.List;
 
 public class MysqlUserDao implements UserDao {
 
-    private static final String CREATE = "INSERT INTO user (user_name, password, email_address) VALUES (:user_name, :password, :email_address);";
-    private static final String READ = "SELECT * FROM user WHERE user_name = :user_name;";
-    private static final String UPDATE = "UPDATE user SET user_name = :user_name, password = :password, email_address = :email_address WHERE user_name = :user_name;";
-    private static final String DELETE = "DELETE FROM user WHERE user_name = :user_name;";
+    private static final String CREATE = "INSERT INTO user (userName, password, emailAddress) VALUES (:userName, :password, :emailAddress);";
+    private static final String READ = "SELECT * FROM user WHERE userName = :userName;";
+    private static final String UPDATE = "UPDATE user SET userName = :userName, password = :password, emailAddress = :emailAddress WHERE userName = :userName;";
+    private static final String DELETE = "DELETE FROM user WHERE userName = :userName;";
 
     private NamedParameterJdbcTemplate template;
 
@@ -30,9 +30,9 @@ public class MysqlUserDao implements UserDao {
     }
 
     @Override
-    public User read(String user_name) {
+    public User read(String userName) {
         User resultUser = null;
-        SqlParameterSource namedParameter = new MapSqlParameterSource("user_name",user_name);
+        SqlParameterSource namedParameter = new MapSqlParameterSource("userName", userName);
 
         List<User> userList = template.query(READ, namedParameter, BeanPropertyRowMapper.newInstance(User.class));
 
@@ -46,13 +46,11 @@ public class MysqlUserDao implements UserDao {
     public void update(User user) {
         BeanPropertySqlParameterSource beanParamSource = new BeanPropertySqlParameterSource(user);
         template.update(UPDATE, beanParamSource);
-
     }
 
     @Override
     public void delete(User user) {
-        SqlParameterSource namedParameter = new MapSqlParameterSource("user_name", user.getUser_name());
+        SqlParameterSource namedParameter = new MapSqlParameterSource("userName", user.getUserName());
         template.update(DELETE, namedParameter);
-
     }
 }

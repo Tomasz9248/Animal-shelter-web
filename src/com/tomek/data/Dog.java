@@ -11,13 +11,11 @@ public Dog() {
 
 }
 
-
     public Dog(String name, String race, int age, String isFetching, String isPurebred) {
         super(name, race, age);
         this.isFetching = isFetching;
         this.isPurebred = isPurebred;
 //        additionDate = LocalDate.now();
-
     }
 
     public String getIsFetching() {
@@ -36,25 +34,34 @@ public Dog() {
         this.isPurebred = isPurebred;
     }
 
-    //    public LocalDate getAdditionDate() {
-//        return additionDate;
-//    }
-//
-//    public void setAdditionDate(LocalDate additionDate) {
-//        this.additionDate = additionDate;
-//    }
-
     @Override
-    public int compareTo(Dog o) {
-        return super.compareTo(o);
+    public  boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || this.getClass() != obj.getClass()) {
+            return false;
+        }
+        Dog dog = (Dog) obj;
+        return (getName().equals(dog.getName()) &&
+                getAge() == dog.getAge() &&
+                getRace().equals(dog.getRace()) &&
+                getIsFetching().equals(dog.getIsFetching()) &&
+                getIsPurebred().equals(dog.getIsPurebred()));
     }
 
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + getIsFetching().hashCode();
+        result = 31 * result + getIsPurebred().hashCode();
+        return result;
+    }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder(super.toString());
         sb.append("Aportuje: " + isFetching + ", ");
         sb.append("Rodowód: " + isPurebred);
-//        sb.append("Data dodania: " + additionDate);
         return sb.toString();
     }
 }

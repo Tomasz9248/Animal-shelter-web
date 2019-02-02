@@ -46,13 +46,11 @@ public class MysqlDogDao implements DogDao {
     public void update(Dog dog) {
         BeanPropertySqlParameterSource beanParamSource = new BeanPropertySqlParameterSource(dog);
         template.update(UPDATE, beanParamSource);
-
     }
 
     @Override
     public void delete(Dog dog) {
         SqlParameterSource namedParameter = new MapSqlParameterSource("name", dog.getName());
         template.update(DELETE, namedParameter);
-
     }
 }

@@ -20,9 +20,6 @@ public class RegisterServlet extends HttpServlet {
         String user_name = request.getParameter("username");
         String password = request.getParameter("password");
         String email_address = request.getParameter("emailAddress");
-
-
-
         try {
             DaoFactory factory = DaoFactory.getDaoFactory(DaoFactory.MYSQL_FACTORY);
             UserDao dao = factory.getUserDao();
@@ -38,8 +35,6 @@ public class RegisterServlet extends HttpServlet {
             } else {
                 response.sendRedirect("register.jsp");
             }
-
-
         } catch (DbOperationException e) {
             e.printStackTrace();
             response.sendRedirect("error.jsp");

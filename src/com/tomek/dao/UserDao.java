@@ -6,7 +6,7 @@ public interface UserDao {
 
     public void create(User user);
 
-    public User read(String user_name);
+    public User read(String userName);
 
     public void update(User user);
 

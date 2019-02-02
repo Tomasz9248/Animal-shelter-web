@@ -12,4 +12,3 @@ public class MysqlDaoFactory extends DaoFactory {
         return new MysqlUserDao();
     }
 }
-

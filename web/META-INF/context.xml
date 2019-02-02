@@ -15,7 +15,7 @@
     <Realm className="org.apache.catalina.realm.DataSourceRealm"
            dataSourceName="jdbc/shelter"
            userTable="user"
-           userNameCol="user_name"
+           userNameCol="userName"
            userCredCol="password"
            userRoleTable="user_role"
            roleNameCol="role_name"
