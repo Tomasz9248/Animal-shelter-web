@@ -1,0 +1,62 @@
+<component name="libraryTable">
+  <library name="HikariCP-3.3.0-sources">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/HikariCP-3.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-8.0.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/slf4j-api-1.7.25.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/slf4j-simple-1.7.25.jar!/" />
+      <root url="jar://$USER_HOME$/Libraries/javax.mail.jar!/" />
+      <root url="jar://$USER_HOME$/Libraries/jid3lib-0.5.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-beans-5.0.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-core-5.0.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-jcl-5.0.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-jdbc-5.0.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-tx-5.0.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/commons-validator-1.4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/commons-validator-1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-appengine/javadoc" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-async/javadoc" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-core/javadoc" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-examples/javadoc" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-http2-support/javadoc" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-stream/javadoc" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/HikariCP-3.3.0-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/slf4j-api-1.7.25-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/slf4j-simple-1.7.25-sources.jar!/" />
+      <root url="file://$USER_HOME$/Libraries/src/build/java" />
+      <root url="file://$USER_HOME$/Libraries/src/demo/java" />
+      <root url="file://$USER_HOME$/Libraries/src/generated/java" />
+      <root url="file://$USER_HOME$/Libraries/src/legacy/java" />
+      <root url="file://$USER_HOME$/Libraries/src/main/core-api/java" />
+      <root url="file://$USER_HOME$/Libraries/src/main/core-impl/java" />
+      <root url="file://$USER_HOME$/Libraries/src/main/protocol-impl/java" />
+      <root url="file://$USER_HOME$/Libraries/src/main/user-api/java" />
+      <root url="file://$USER_HOME$/Libraries/src/main/user-impl/java" />
+      <root url="file://$USER_HOME$/Libraries/src/test/java" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-appengine/src/main/java" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-appengine/src/test/java" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-async/src/main/java" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-async/src/test/java" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-core/src/internal-async/java" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-core/src/internal-http/java" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-core/src/internal-json/java" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-core/src/internal-logging/java" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-core/src/internal-util/java" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-core/src/jmx/java" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-core/src/main/java" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-core/src/test/java" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-examples/src/main/java" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-http2-support/src/main/java" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-http2-support/src/test/java" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-stream/src/main/java" />
+      <root url="jar://$USER_HOME$/Libraries/twitter4j-4.0.7.zip!/twitter4j-stream/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/commons-validator-1.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
