@@ -135,7 +135,7 @@ body {
     left: 0;
     width: 100%;
     background-color: black;
-    position: relative;
+    position: fixed;
 }
 
 .footer img {
