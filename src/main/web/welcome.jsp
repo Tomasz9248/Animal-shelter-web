@@ -15,8 +15,8 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/fragments/navbar.jspx"/>
-
-<h2>Witaj wśród zarejestrowanych członków Schroniska Java <c:out value="${username}"/>  </h2>
+<h2>Witaj wśród zarejestrowanych członków Schroniska Java <c:out value="${username}"/></h2>
+<p>Twoje konto zostało aktywowane. Teraz możesz się <a href="/login">zalogować</a>. </p>
 <%@ include file="WEB-INF/fragments/footer.jspx"%>
 </body>
 </html>

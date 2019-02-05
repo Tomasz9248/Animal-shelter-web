@@ -14,7 +14,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/fragments/navbar.jspx"/>
-<form action="SearchDeleteServlet" method="post">
+<form action="/delete-status" method="post">
     <h2>Podaj imię zwierzęcia, które chcesz usunąć z bazy</h2>
     <input type="text" placeholder="Imię" name="name"><br>
     <input type="submit" name ="option" value="Usuń"/>

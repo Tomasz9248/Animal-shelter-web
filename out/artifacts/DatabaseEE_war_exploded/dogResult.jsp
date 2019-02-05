@@ -23,7 +23,7 @@ W wyniku Twojego zapytania <c:out value="${operation}"/> otrzymano następujący
     Aportuje: <jsp:getProperty name="dog" property="isFetching"/><br>
     Rodowód: <jsp:getProperty name="dog" property="isPurebred"/></p>
 <a href="index.jsp">Powrót do strony głównej</a> ||
-<a href="addAnimal.jsp">Dodaj/usuń kolejne zwierzę</a>
+<a href="addUpdateAnimal.jsp">Dodaj/usuń kolejne zwierzę</a>
 <%@ include file="WEB-INF/fragments/footer.jspx"%>
 </body>
 </html>

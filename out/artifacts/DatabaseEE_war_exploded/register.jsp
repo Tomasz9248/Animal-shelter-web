@@ -15,7 +15,7 @@
 <jsp:include page="/WEB-INF/fragments/navbar.jspx"/>
 
 <h1>Podaj dane aby założyć nowe konto:</h1>
-<form action="RegisterServlet" method="post">
+<form action="/welcome" method="post">
     <input type="text" name="username" placeholder="nazwa użytkownika" required><br>
     <input type="email" name="emailAddress" placeholder="adres e-mail" required><br>
     <input type="password" name="password" placeholder="hasło" required><br>

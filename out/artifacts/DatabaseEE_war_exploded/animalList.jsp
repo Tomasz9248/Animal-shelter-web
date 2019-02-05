@@ -13,7 +13,6 @@
 <body>
 <jsp:include page="/WEB-INF/fragments/navbar.jspx"/>
 <h2>Lista zwierząt przebywających w schronisku:</h2>
-
 <table class="zebra-table">
     <tr>
         <th>Imię</th>
@@ -22,7 +21,6 @@
         <th>Aportuje</th>
         <th>Rodowód</th>
     </tr>
-
     <tr>
         <c:forEach items="${animalList}" var="animal">
         <td><c:out value="${animal.name}"/></td>

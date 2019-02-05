@@ -12,10 +12,10 @@
     <title>Schronisko Java - błąd logowania</title>
 </head>
 <body>
-<@include file="""/WEB-INF/fragments/navbar.jspx"%>
+<jsp:include page="WEB-INF/fragments/navbar.jspx"/>
 <h2>Podane dane do autoryzacji są błędne.</h2>
-<a href="addAnimal.jsp">Spróbuj ponownie</a><br>
-<a href="index.jsp">Wróc do strony głównej</a>
+<a href="/login">Spróbuj ponownie</a><br>
+<a href="/">Wróc do strony głównej</a>
 </body>
 <%@ include file="WEB-INF/fragments/footer.jspx"%>
 </html>

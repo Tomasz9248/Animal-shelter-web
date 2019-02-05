@@ -1,13 +1,13 @@
 <div class="navbar" xmlns:c="http://java.sun.com/jsp/jstl/core_1_1">
-    <a href="index.jsp">Strona główna</a>
-    <a href="ListServlet">Lista zwierząt</a>
+    <a href="/">Strona główna</a>
+    <a href="/animal-list">Lista zwierząt</a>
     <div class="dropdown">
         <button class="dropbtn">Zarządzaj
         </button>
         <div class="dropdown-content">
-            <a href="addAnimal.jsp">Dodaj/modyfikuj zwierzę</a>
-            <a href="readAnimal.jsp">Wyszukaj zwierzę</a>
-            <a href="deleteAnimal.jsp">Usuń zwierzę</a>
+            <a href="/add-update-animal">Dodaj/modyfikuj zwierzę</a>
+            <a href="/search-animal">Wyszukaj zwierzę</a>
+            <a href="/delete-animal">Usuń zwierzę</a>
         </div>
     </div>
     <div class="f-right">
@@ -16,7 +16,7 @@
               <a href="LogoutServlet">Wyloguj się</a>
             </c:when>
             <c:otherwise>
-               <a href="LoginServlet">Zaloguj się</a>
+               <a href="/login">Zaloguj się</a>
                 <a href="register.jsp">Zarejestruj się</a>
             </c:otherwise>
         </c:choose>
