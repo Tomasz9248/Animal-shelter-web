@@ -65,7 +65,7 @@
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/LogoutServlet</url-pattern>
     </servlet-mapping>
-<!-- Ustawienia autoryzacji -->
+    <!-- Ustawienia autoryzacji dla zasobów-->
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>Resources available after login</web-resource-name>
@@ -73,13 +73,13 @@
             <http-method>GET</http-method>
             <http-method>POST</http-method>
         </web-resource-collection>
-
+        <!-- Ustawienia ról posiadających dostęp do powyższych zasobów -->
         <auth-constraint>
             <role-name>admin_role</role-name>
             <role-name>user_role</role-name>
         </auth-constraint>
     </security-constraint>
-
+    <!-- Ustawienia autoryzacji dla zasobów-->
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>Resources available after login</web-resource-name>
@@ -88,25 +88,29 @@
             <http-method>GET</http-method>
             <http-method>POST</http-method>
         </web-resource-collection>
-
+        <!-- Ustawienia ról posiadających dostęp do powyższych zasobów -->
         <auth-constraint>
             <role-name>admin_role</role-name>
         </auth-constraint>
     </security-constraint>
-
+    <!-- Definicja ról występujących w bazie -->
     <security-role>
         <role-name>admin_role</role-name>
     </security-role>
     <security-role>
         <role-name>user_role</role-name>
     </security-role>
-
+    <!-- Forma autoryzacji i strona logowania/podania błędnych danych -->
     <login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>
             <form-login-page>/login.jsp</form-login-page>
             <form-error-page>/error.jsp</form-error-page>
-
         </form-login-config>
     </login-config>
+    <!-- Obsługa żądań z errorami -->
+    <error-page>
+        <error-code>403</error-code>
+        <location>/accessDenied.jsp</location>
+    </error-page>
 </web-app>
