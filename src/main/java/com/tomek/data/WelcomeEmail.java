@@ -16,7 +16,7 @@ public class WelcomeEmail {
     private static final String WELCOME_MAIL_SUBJECT = "Welcome!";
     private static final String WELCOME_EMAIL_BODY = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci.";
     private static final String SENDER_EMAIL = "savoirself";
-    private static final String SENDER_PASSWORD = "Ad8bUT#TruE.^";
+    private static final String SENDER_PASSWORD = "testPassword";
 
     private static Properties emailProperties;
     private static Session mailSession;
