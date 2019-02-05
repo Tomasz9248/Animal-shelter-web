@@ -15,7 +15,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/fragments/navbar.jspx"/>
-<h2>Na koncie <c:out value="${username}"/> nie ma wystarczających uprawnień by uzyskać dostęp do zasobu.</h2>
+<h2>Na koncie <c:out value="${sessionScope.username}"/> nie ma wystarczających uprawnień by uzyskać dostęp do zasobu.</h2>
 <%@ include file="WEB-INF/fragments/footer.jspx"%>
 </body>
 </html>
