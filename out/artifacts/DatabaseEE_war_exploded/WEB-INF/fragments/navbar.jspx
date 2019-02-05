@@ -1,4 +1,4 @@
-<div class="navbar">
+<div class="navbar" xmlns:c="http://java.sun.com/jsp/jstl/core_1_1">
     <a href="index.jsp">Strona główna</a>
     <a href="ListServlet">Lista zwierząt</a>
     <div class="dropdown">
@@ -11,9 +11,15 @@
         </div>
     </div>
     <div class="f-right">
-        <a href="register.jsp">Zarejestruj się</a>
-        <a href="login.jsp">Zaloguj się</a>
-        <a href="LogoutServlet">Wyloguj się</a>
+        <c:choose>
+            <c:when test="${not empty sessionScope.username}">
+              <a href="LogoutServlet">Wyloguj się</a>
+            </c:when>
+            <c:otherwise>
+               <a href="LoginServlet">Zaloguj się</a>
+                <a href="register.jsp">Zarejestruj się</a>
+            </c:otherwise>
+        </c:choose>
 
     </div>
 </div>
