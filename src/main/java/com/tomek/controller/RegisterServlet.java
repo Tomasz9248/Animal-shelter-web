@@ -19,24 +19,25 @@ public class RegisterServlet extends HttpServlet {
         String user_name = request.getParameter("username");
         String password = request.getParameter("password");
         String email_address = request.getParameter("emailAddress");
-        try {
-            DaoFactory factory = DaoFactory.getDaoFactory(DaoFactory.MYSQL_FACTORY);
-            UserDao dao = factory.getUserDao();
 
-            User user = new User(user_name, password, email_address);
-            dao.create(user);
+        EmailValidator validator = EmailValidator.getInstance();
+        if (validator.isValid(email_address)) {
+            try {
+                DaoFactory factory = DaoFactory.getDaoFactory(DaoFactory.MYSQL_FACTORY);
+                UserDao dao = factory.getUserDao();
 
-            EmailValidator validator = EmailValidator.getInstance();
-            if (validator.isValid(email_address)) {
+                User user = new User(user_name, password, email_address);
+                dao.create(user);
+
                 request.setAttribute("emailAddress", email_address);
                 request.setAttribute("username", user_name);
                 request.getRequestDispatcher("/EmailServlet").forward(request, response);
-            } else {
-                response.sendRedirect("register.jsp");
+            } catch (DbOperationException e) {
+                e.printStackTrace();
+                response.sendRedirect("error.jsp");
             }
-        } catch (DbOperationException e) {
-            e.printStackTrace();
-            response.sendRedirect("error.jsp");
+        } else {
+            response.sendRedirect("register.jsp");
         }
     }
 }

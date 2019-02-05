@@ -7,6 +7,8 @@ import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 
 import java.util.List;
 
@@ -24,9 +26,18 @@ public class MysqlUserDao implements UserDao {
     }
 
     @Override
-    public void create(User user) {
+    public User create(User user) {
+        User resultUser = new User(user);
         BeanPropertySqlParameterSource beanParamSource = new BeanPropertySqlParameterSource(user);
         template.update(CREATE, beanParamSource);
+        setUserRole(resultUser);
+        return resultUser;
+    }
+
+    private void setUserRole(User user) {
+        final String userRoleQuery = "INSERT INTO user_role (userName) VALUES(:userName);";
+        SqlParameterSource namedParameter = new BeanPropertySqlParameterSource(user);
+        template.update(userRoleQuery, namedParameter);
     }
 
     @Override
