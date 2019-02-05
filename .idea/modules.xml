@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AnimalShelterWeb.iml" filepath="$PROJECT_DIR$/AnimalShelterWeb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/WebShelter/DatabaseEE.iml" filepath="$PROJECT_DIR$/WebShelter/DatabaseEE.iml" />
     </modules>
   </component>
 </project>
