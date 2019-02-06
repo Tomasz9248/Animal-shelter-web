@@ -20,6 +20,5 @@
                 <a href="register.jsp">Zarejestruj się</a>
             </c:otherwise>
         </c:choose>
-
     </div>
 </div>

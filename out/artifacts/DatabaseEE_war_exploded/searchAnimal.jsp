@@ -10,12 +10,11 @@
 <body>
 <jsp:include page="/WEB-INF/fragments/navbar.jspx"/>
 <h2>Podaj imię zwierzęcia by zobaczyć informacje </h2>
-<form action="SearchDeleteServlet" method="post">
+<form action="/search-status" method="post">
     <input type="text" placeholder="Imię" name="name">
     <br>
     <input type="submit" name ="option" value="Szukaj"/>
 </form>
-
 <%@ include file="WEB-INF/fragments/footer.jspx"%>
 </body>
 </html>

@@ -12,7 +12,7 @@ import com.tomek.dao.DogDao;
 import com.tomek.util.DbOperationException;
 import com.tomek.data.Dog;
 
-public class DogServlet extends HttpServlet {
+public class UpdateStatusController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

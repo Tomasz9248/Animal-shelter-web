@@ -28,10 +28,6 @@
         <servlet-name>LoginError</servlet-name>
     <jsp-file>/error.jsp</jsp-file>
     </servlet>
-    <servlet>
-        <servlet-name>AccessDenied</servlet-name>
-        <jsp-file>/accessDenied.jsp</jsp-file>
-    </servlet>
     <!-- Konfiguracja serwletów -->
     <servlet>
         <servlet-name>ListServlet</servlet-name>
@@ -65,8 +61,6 @@
         <servlet-name>EmailServlet</servlet-name>
         <servlet-class>com.tomek.controller.EmailServlet</servlet-class>
     </servlet>
-
-
     <!-- Mapowanie serwletów -->
     <servlet-mapping>
         <servlet-name>ListServlet</servlet-name>
@@ -121,11 +115,6 @@
         <servlet-name>LoginError</servlet-name>
         <url-pattern>/invalid-parameters</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AccessDenied</servlet-name>
-        <url-pattern>/access-denied</url-pattern>
-    </servlet-mapping>
-
     <!-- Ustawienia autoryzacji dla zasobów-->
     <security-constraint>
         <web-resource-collection>
@@ -146,6 +135,7 @@
             <web-resource-name>Resources available after login</web-resource-name>
             <url-pattern>/add-update-animal</url-pattern>
             <url-pattern>/delete-animal</url-pattern>
+            <url-pattern>/delete-status</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
         </web-resource-collection>
@@ -172,6 +162,6 @@
     <!-- Obsługa żądań z errorami -->
     <error-page>
         <error-code>403</error-code>
-        <location>/access-denied</location>
+        <location>/accessDenied.jsp</location>
     </error-page>
 </web-app>

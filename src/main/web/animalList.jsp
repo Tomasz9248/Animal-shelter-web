@@ -28,7 +28,7 @@
         <td><c:out value="${animal.age}"/></td>
         <td><c:out value="${animal.isFetching}"/></td>
         <td><c:out value="${animal.isPurebred}"/></td>
-            <td><form method="Post" action="SearchDeleteServlet">
+            <td><form method="Post" action="/delete-status">
                 <input type="hidden" name="name" value=<c:out value="${animal.name}"/> />
                 <button name="option" value="Usuń" type="submit">Adoptuj</button>
             </form></td>

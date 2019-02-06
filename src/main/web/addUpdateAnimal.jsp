@@ -11,7 +11,7 @@
 <body>
 <jsp:include page="/WEB-INF/fragments/navbar.jspx"/>
 <h2>Podaj dane zwierzęcia które chcesz dodać/zmodyfikować </h2>
-<form action="DogServlet" method="post">
+<form action="/update-status" method="post">
     <input type="text" placeholder="Imię" name="name">
     <br>
     <input type="text" placeholder="rasa" name="race"><br>

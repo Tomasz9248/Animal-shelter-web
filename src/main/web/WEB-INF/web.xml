@@ -135,6 +135,7 @@
             <web-resource-name>Resources available after login</web-resource-name>
             <url-pattern>/add-update-animal</url-pattern>
             <url-pattern>/delete-animal</url-pattern>
+            <url-pattern>/delete-status</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
         </web-resource-collection>
