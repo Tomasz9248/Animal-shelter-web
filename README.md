@@ -10,6 +10,6 @@ Moreover project allowed me to know relational databases concept - being more sp
 
 The last part was about storing data into db and geting it. To achieve that in simple way (in JEE environment) I used abstract factory pattern and stored CRUD methods and queries for each object type in different class. Abstract factory also allows to create different implementation types that depend on which database is used. With CRUD and database I also was able to add registration and user roles with restricted areas based on database entities.
 
-Views are sent to user in form of jsp files that use html/css and JSTL tags due to not mixing java language and html in one file. Its easier to read however not perfect still.
+Views are sent to user in form of jsp files that use html/css and JSTL tags due to not mixing java language and html in one file. Its easier to read however not perfect still. To deploy app I've been using Tomcat local server.
 
 At this point after adding some basic frontend I decided I know as much as I need to start learning Spring.
